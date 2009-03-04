@@ -1,0 +1,18 @@
+# Automatic backspace/delete detection {{{2
+# This nice piece of work is thanks to Peter Stephenson in zsh-users/8398.
+# It automatically sets the terminal driver up correctly to match the
+# first ^? or ^H we see.
+backward-delete-char-detect() {
+  if (( #KEYS == ##\C-? )); then
+    zmodload -i zsh/sched
+    sched +00:00 "stty erase '^?'"
+  elif (( #KEYS == ##\C-h )); then
+    zmodload -i zsh/sched
+    sched +00:00 "stty erase '^h'"
+  fi
+
+  zle -A .$WIDGET $WIDGET
+  zle .$WIDGET
+}
+zle -N backward-delete-char backward-delete-char-detect
+zle -N vi-backward-delete-char backward-delete-char-detect

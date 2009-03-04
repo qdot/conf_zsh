@@ -1,0 +1,23 @@
+#The usual
+PATH=/sbin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/bin:/usr/bin
+#Macports
+#PATH=$PATH:/opt/local/bin:/opt/local/sbin
+#git
+PATH=$PATH:/usr/local/git/bin
+#Xilinx Webpack for Linux
+PATH=$PATH:/opt/Xilinx/10.1/ISE/bin/lin
+#eldk ppc cross compiler
+PATH=$PATH:/opt/eldk/bin:/opt/eldk/usr/bin
+#fink
+#PATH=$PATH:/sw/bin:/sw/local/bin:/sw/sbin:/sw/local/sbin
+#Xcode Developer Tools
+PATH=$PATH:/Developer/Tools
+#OSX MySQL
+PATH=$PATH:/usr/local/mysql/bin
+#Shell scripts
+PATH=$PATH:~/.shell_scripts
+
+# Perform the cleaning
+pathclean PATH
+
+

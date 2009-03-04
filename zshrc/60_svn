@@ -1,0 +1,3 @@
+#aliases for svn paths
+export SVNHOME=svn+ssh://nonpolynomial.com/home/npscm/svn
+export SVN_EDITOR="emacs -nw"

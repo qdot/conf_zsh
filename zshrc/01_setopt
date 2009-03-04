@@ -1,0 +1,12 @@
+setopt auto_list
+setopt auto_param_slash
+setopt auto_param_keys
+
+#other options
+setopt complete_aliases
+setopt complete_in_word
+setopt multios
+setopt extended_glob
+setopt auto_cd
+setopt nobeep
+setopt SH_WORD_SPLIT

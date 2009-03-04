@@ -1,0 +1,68 @@
+# util
+#
+# Miscellaneous utility functions
+#
+# Copyright © 1994-2008 martin f. krafft <madduck@madduck.net>
+# Released under the terms of the Artistic Licence 2.0
+#
+# Source repository: git://git.madduck.net/etc/zsh.git
+#
+
+function is_root() {
+  test ${EUID:?} -eq 0
+}
+
+# Clean up path-like variables {{{2
+# Here we clean up the PATH and similar variables by removing non-existant
+# dirs and duplicates.
+#
+# This is made significantly easier in zsh by two features: typeset -T and
+# typeset -U. Together they allow us to treat PATH-like variables as
+# arrays, with builtin uniqueness
+#
+# We do this by declaring a function that cleans a variable. This function
+# is currently left declared for future use. TODO: Should we unset this?
+
+# pathclean: Clean up path-like variables {{{3
+# arguments: name-of-var-to-clean
+# 
+# Note that this function's parameter is the NAME of the variable to clean
+# up, not the contents of the variable. The variable is changed in-place.
+# This is the zsh equivalent to pass-by-reference!
+
+function pathclean() {
+    # Variable Declarations 
+    local -i i=1        # loop var
+    local thevar=$1     # The NAME of the variable we're cleaning
+    thearr=${(L)1}      # The NAME of the array associated with it
+
+    # Clean up the PATH 
+    # Tie the variable to a corresponding array parameter
+    # Can't do this to 'path' or 'manpath'
+    if [[ ( $thevar == PATH ) || ( $thevar == MANPATH ) ]]
+    then
+        typeset -agU $thearr
+    else
+        typeset -agUT $thevar $thearr
+    fi
+
+    # Now loop through and remove non-existent directories (this gets a
+    # bit hairy )
+    while (( i <= ${(P)#thearr} ))
+    do
+        if [[ ! -d ${${(P)thearr}[i]} ]]
+        then
+            eval "${thearr}[i]=()"
+            continue
+        fi
+        (( i = i + 1 ))
+    done
+}
+
+function _calc () {
+     awk "BEGIN { print $* ; }"
+}         
+
+function _calcfx () {
+    gawk -v CONVFMT="%12.2f" -v OFMT="%.9g"  "BEGIN { print $* ; }"
+}

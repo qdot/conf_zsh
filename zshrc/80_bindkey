@@ -1,0 +1,4 @@
+#emacs shell settings
+bindkey -e
+WORDCHARS=''
+bindkey "\C-w" kill-region

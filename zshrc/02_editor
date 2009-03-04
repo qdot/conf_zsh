@@ -1,0 +1,5 @@
+[[ $(uname) == Darwin ]] && is_darwin=1
+if (( is_darwin )); then
+   export VISUAL='ae'	
+   export EDITOR='ae'
+fi

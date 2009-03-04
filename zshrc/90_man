@@ -1,0 +1,7 @@
+#manpage tab completion
+function man_var () {
+   man_pages=( /usr/share/man*/*(N:t:r:r) )
+   compctl -k man_pages man
+   reply=( $man_pages )
+}
+compctl -K man_var man; man_pages=()

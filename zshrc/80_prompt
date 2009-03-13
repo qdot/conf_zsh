@@ -10,6 +10,8 @@
 # vi-mode colour changing
 #   http://www.zsh.org/mla/users/2006/msg01196.html
 
+
+
 setopt prompt_subst
 autoload colors
 colors
@@ -131,6 +133,9 @@ if [[ "$TERM" != "linux" ]]; then
 
 fi #TERM
 
+#If we're using emacs, make sure the prompt is as minimal as possible, otherwise 
+#tramp will never connect
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
 
 # ------------------------
 #       PS1=$'%{\e[34;1m%}%20>..>%1~%>>>%{\e[0m%}'

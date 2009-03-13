@@ -20,4 +20,3 @@ PATH=$PATH:~/.shell_scripts
 # Perform the cleaning
 pathclean PATH
 
-

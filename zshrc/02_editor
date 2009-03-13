@@ -2,4 +2,7 @@
 if (( is_darwin )); then
    export VISUAL='ae'	
    export EDITOR='ae'
+else
+   export VISUAL='emacs'	
+   export EDITOR='emacs'
 fi

@@ -16,3 +16,15 @@ backward-delete-char-detect() {
 }
 zle -N backward-delete-char backward-delete-char-detect
 zle -N vi-backward-delete-char backward-delete-char-detect
+
+# Taken from http://www.paeps.cx/weblog/FreeBSD/playing_with_zsh.html
+# Emulate tcsh's backward-delete-word
+tcsh-backward-delete-word () {
+    local WORDCHARS="${WORDCHARS:s#/#}"
+    zle backward-delete-word
+}
+zle -N tcsh-backward-delete-word
+
+#If we're using emacs, make sure the prompt is as minimal as possible, otherwise 
+#tramp will never connect
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '

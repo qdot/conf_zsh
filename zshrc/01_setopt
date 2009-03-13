@@ -10,3 +10,6 @@ setopt extended_glob
 setopt auto_cd
 setopt nobeep
 setopt SH_WORD_SPLIT
+
+autoload -U compinit
+compinit

@@ -5,11 +5,26 @@ setopt auto_param_keys
 #other options
 setopt complete_aliases
 setopt complete_in_word
+setopt always_to_end
+setopt hist_verify
+setopt print_exit_value
 setopt multios
 setopt extended_glob
-setopt auto_cd
+
 setopt nobeep
-setopt SH_WORD_SPLIT
+#setopt SH_WORD_SPLIT
+
+#history stuff
+#enable ! for history
+setopt banghist 
+#share 
+setopt share_history 
+
+#directory stuff
+#if a directory name is entered, cd to it
+setopt auto_cd
+
+setopt equals
 
 autoload -U compinit
 compinit

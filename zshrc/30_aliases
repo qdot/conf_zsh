@@ -1,11 +1,18 @@
 #convienence aliases
 alias 'cd..'='cd ..'
+# cd by .. or ... or ... or mv file ..../.
+alias '..'='cd ..'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
 
 alias calc="noglob _calc" calcfx="noglob _calcfx"
 
 alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'
 alias la='ls -lA'
+
+
 
 [[ $(uname) == Darwin ]] && is_darwin=1
 if (( is_darwin )); then

@@ -1,6 +1,0 @@
-if (( $is_darwin )); then
-	DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH		
-	export PATH DYLD_LIBRARY_PATH
-else
-	export PATH LD_LIBRARY_PATH
-fi

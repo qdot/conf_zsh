@@ -1,2 +1,0 @@
-LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
-pathclean LD_LIBRARY_PATH

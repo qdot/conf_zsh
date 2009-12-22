@@ -11,6 +11,9 @@ setopt print_exit_value
 setopt multios
 setopt extended_glob
 
+# Don't report errors when a glob doesn't match. Fixes glob issues with curl, scp, etc...
+setopt nonomatch
+
 setopt nobeep
 #setopt SH_WORD_SPLIT
 

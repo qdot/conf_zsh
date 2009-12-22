@@ -12,13 +12,6 @@ alias ls='ls --color=auto --human-readable'
 alias ll='ls -l'
 alias la='ls -lA'
 
-
-
-[[ $(uname) == Darwin ]] && is_darwin=1
-if (( is_darwin )); then
-alias ae='open /Applications/Aquamacs\ Emacs.app/ '
-fi
-
 # Started recompiling coreutils when on macs
 # Hopefully can avoid using this from now on.
 #    alias ls='ls -G'

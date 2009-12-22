@@ -71,6 +71,8 @@ new_parse_git_branch() {
 	__ZSH_GIT_FULL_DIR=$(readlink -f ${git_dir:h})
 	elif test -f "/usr/local/bin/readlink"; then
 	__ZSH_GIT_FULL_DIR=$(readlink -f ${git_dir:h})
+	elif test -f "/usr/local/gnu-coreutils/bin/readlink"; then
+	__ZSH_GIT_FULL_DIR=$(readlink -f ${git_dir:h})
 	else
 	__ZSH_GIT_FULL_DIR=$(greadlink -f ${git_dir:h})
     fi

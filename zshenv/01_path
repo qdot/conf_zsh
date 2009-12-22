@@ -1,5 +1,5 @@
 #The usual
-PATH=/sbin:/usr/local/sbin:/usr/sbin:/usr/local/bin:/bin:/usr/bin
+PATH=/sbin:/usr/local/sbin:/usr/sbin:/usr/local/gnu-coreutils/bin:/usr/local/bin:/bin:/usr/bin
 #Macports
 #PATH=$PATH:/opt/local/bin:/opt/local/sbin
 #git

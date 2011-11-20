@@ -31,3 +31,5 @@ setopt equals
 
 autoload -U compinit
 compinit
+
+autoload -U zmv

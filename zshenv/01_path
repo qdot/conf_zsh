@@ -1,21 +1,15 @@
-#The usual
-PATH=/sbin:/usr/local/sbin:/usr/sbin:/usr/local/gnu-coreutils/bin:/usr/local/bin:/bin:/usr/bin
-#Macports
-#PATH=$PATH:/opt/local/bin:/opt/local/sbin
-#git
+#Always include our version of usr/bin if it's in the home dir first
+PATH=~/usr/bin
+#git on OS X
 PATH=$PATH:/usr/local/git/bin
-#Xilinx Webpack for Linux
-PATH=$PATH:/opt/Xilinx/10.1/ISE/bin/lin
-#eldk ppc cross compiler
-PATH=$PATH:/opt/eldk/bin:/opt/eldk/usr/bin
-#fink
-#PATH=$PATH:/sw/bin:/sw/local/bin:/sw/sbin:/sw/local/sbin
+#Homebrew
+PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
+#The usual
+PATH=$PATH:/sbin:/usr/local/sbin:/usr/sbin:/usr/local/gnu-coreutils/bin:/usr/local/bin:/bin:/usr/bin
 #Xcode Developer Tools
 PATH=$PATH:/Developer/Tools
 #OSX MySQL
 PATH=$PATH:/usr/local/mysql/bin
-#Shell scripts
-PATH=$PATH:~/.shell_scripts
 
 # Perform the cleaning
 pathclean PATH

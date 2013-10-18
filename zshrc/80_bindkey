@@ -1,4 +1,9 @@
-#emacs shell settings
+# emacs shell settings
 bindkey -e
-#Set bindkey to delete the last word, or the last directory if in a path, as set in 80_zle
+
+# Set bindkey to delete the last word, or the last directory if in a path, as set in 80_zle
 bindkey "\C-w" tcsh-backward-delete-word
+
+# Set up/down to use history search/completion
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward

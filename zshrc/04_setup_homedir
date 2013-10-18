@@ -1,0 +1,4 @@
+if [ -d ~/Dropbox/dotfiles ];
+then
+    sh ~/Dropbox/dotfiles/setuphome.sh
+fi

@@ -1,0 +1,3 @@
+eval `keychain --eval id_rsa`
+
+export GPGKEY=157A86FC

@@ -1,7 +1,7 @@
 setopt auto_list
 setopt auto_param_slash
 setopt auto_param_keys
-
+setopt auto_pushd
 #other options
 setopt complete_aliases
 setopt complete_in_word

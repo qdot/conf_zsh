@@ -1,16 +1,19 @@
-#Always include our version of usr/bin if it's in the home dir first
+# Always include our version of usr/bin if it's in the home dir first
 PATH=~/usr/bin
-#git on OS X
+# git on OS X
 PATH=$PATH:/usr/local/git/bin
-#Homebrew
-PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
-#The usual
+# Homebrew
+PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/share/python
+# The usual
 PATH=$PATH:/sbin:/usr/local/sbin:/usr/sbin:/usr/local/gnu-coreutils/bin:/usr/local/bin:/bin:/usr/bin
-#Xcode Developer Tools
+# Xcode Developer Tools
 PATH=$PATH:/Developer/Tools
-#OSX MySQL
+# OSX MySQL
 PATH=$PATH:/usr/local/mysql/bin
-
+# account local gems
+PATH=$PATH:/home/qdot/.gem/ruby/1.8/bin
 # Perform the cleaning
 pathclean PATH
 
+export PYTHONPATH=/opt/homebrew/lib/python2.7/site-packages:$PYTHONPATH
+pathclean PYTHONPATH

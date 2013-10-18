@@ -8,14 +8,17 @@ alias -g .....='../../../..'
 
 alias calc="noglob _calc" calcfx="noglob _calcfx"
 
-alias ls='ls --color=auto --human-readable'
+if [[ -a /usr/bin/emacs-snapshot ]]; then
+   alias emacs=emacs-snapshot
+   alias emacsclient=emacsclient.emacs-snapshot
+fi
+
+if [[ -a /opt/homebrew/bin/gls ]]; then
+   alias ls='gls --color=auto --human-readable'
+else
+   alias ls='ls --color=auto --human-readable --block-size=1'
+fi
 alias ll='ls -l'
 alias la='ls -lA'
 
-# Started recompiling coreutils when on macs
-# Hopefully can avoid using this from now on.
-#    alias ls='ls -G'
-#    alias ll='ls -lG'
-#    alias la='ls -lAG'
-
-
+alias pg='ps aux | grep'

@@ -32,3 +32,5 @@ chpwd_functions+=__chpwd_run_first
 [[ $(uname) == Darwin ]] && is_darwin=1
 
 # vim:ft=zsh
+
+fpath=(~/.zsh_files/completions $fpath)

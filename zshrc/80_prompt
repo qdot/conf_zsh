@@ -120,7 +120,7 @@ fi
 
 unset rst bgc
 
-if [[ "$TERM" != "linux" ]]; then
+if [[ "$TERM" != "linux" && "$TERM" != "eterm-color" && "$TERM" != "emacs" ]]; then
 
   # this updates title bar before prompt is printed
   precmd () {

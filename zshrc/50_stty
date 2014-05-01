@@ -1,0 +1,2 @@
+# Turn off XON/XOFF flow control so Ctrl-s doesn't freeze things
+stty -ixon
